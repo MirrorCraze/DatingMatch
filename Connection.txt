@@ -1,0 +1,6 @@
+Mongkok : Central, Diamond hill, Kowloon Tong, Lai King
+Central : North Point
+Diamond Hill : Kowloon Tong, Tiu Keng Leng
+Kowloon Tong : Hung Hom
+North Point : Tiu Keng Leng
+Lai King : Hung Hom
