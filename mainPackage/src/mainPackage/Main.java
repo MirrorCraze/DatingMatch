@@ -1,37 +1,60 @@
 package mainPackage;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-	
-	public static void main(String[] args) {
-		FloydWarshall.mapInitialize();
-		int amountOfPeople;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("How many contestants?");
-		amountOfPeople = sc.nextInt();
-		String name;
-		double latCoor;
-		double longCoor;
-		char sex;
-		String inputAll;
-		String[] inputDiv;
-		sc.nextLine(); //get \n
-		for(int i=0;i<amountOfPeople;i++)
-		{
-			System.out.print("Please input name, decimal coordinate (latitude,longtitude) and gender (M,F).\n");
-			System.out.print("The format will be name,lat,long,gender : ");
-			
-			inputAll = sc.nextLine();
-			inputDiv = inputAll.split(",");
-			name = inputDiv[0];
-			latCoor = Double.parseDouble(inputDiv[1]);
-			longCoor = Double.parseDouble(inputDiv[2]);
-			sex = inputDiv[3].charAt(0);
-			FloydWarshall.addPerson(name,latCoor,longCoor,sex);
-		}
-		double[][] dist = FloydWarshall.calShortestDist();
-		FloydWarshall.printDist(dist);
-		sc.close();
-	}
 
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+
+		FloydWarshall.mapInitialize();
+		String filename;
+		Scanner sc = new Scanner(System.in);
+		int command;
+		boolean done=false;
+		System.out.println("Please input the data file name:");
+		filename = sc.next();
+		FloydWarshall.readFile(filename);
+		System.out.println("Data collected, thank you, dear!\n");
+		double[][] distance = FloydWarshall.calShortestDist();
+		while(!done)
+		{
+			System.out.println("Hello again dear love bird! Please select a service from the following list:");
+			System.out.println("1 Input another data file name");
+			System.out.println("2 Display shortest distances");
+			System.out.println("3 Display scores");
+			System.out.println("4 Display matches");
+			System.out.println("0 Exit");
+			command=sc.nextInt();
+			switch (command) {
+			case 1:
+			System.out.println("Please input the data file name:");
+			filename = sc.next();
+			FloydWarshall.readFile(filename);
+			System.out.println("Data collected, thank you dear");
+			break;
+			case 2: 
+			FloydWarshall.printDist(distance);
+			System.out.println();
+			break;
+			case 3:
+			Stable_Matching.setScore();
+			System.out.println();
+			break;
+			case 4:
+			Stable_Matching.stable_match();
+			System.out.println();
+			break;
+			case 0:
+			done=true;
+			break;
+			}
+		}
+		
+		sc.close();
+		
+	}
 }
