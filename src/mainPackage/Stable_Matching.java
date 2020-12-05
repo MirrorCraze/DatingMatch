@@ -56,7 +56,7 @@ public class Stable_Matching {
 						}
 			}
 		}
-		Stable_Matching.printCouples();
+		printCouples();
 	}
 	
 	public static void printCouples()
