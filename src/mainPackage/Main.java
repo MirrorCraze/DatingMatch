@@ -17,9 +17,9 @@ public class Main {
 		boolean done=false;
 		System.out.println("Please input the data file name:");
 		filename = sc.next();
-		FloydWarshall.readFile(filename);
+		double[][] distance = InputRead.readFile(filename);
 		System.out.println("Data collected, thank you, dear!\n");
-		double[][] distance = FloydWarshall.calShortestDist();
+		
 		while(!done)
 		{
 			System.out.println("Hello again dear love bird! Please select a service from the following list:");
@@ -33,7 +33,7 @@ public class Main {
 			case 1:
 			System.out.println("Please input the data file name:");
 			filename = sc.next();
-			FloydWarshall.readFile(filename);
+			InputRead.readFile(filename);
 			System.out.println("Data collected, thank you dear");
 			break;
 			case 2: 
