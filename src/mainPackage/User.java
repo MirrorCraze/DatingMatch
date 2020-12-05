@@ -30,10 +30,13 @@ public class User {
 
 	public int calculateScore(User u) {
 		if (u.age <= this.lowerAgeBound || u.age >= this.upperAgeBound)
-			return -1;
+			return 0;
 		double age_score = this.ageScore(u);
+		//System.out.println ("Age : " + age_score); 
 		double location_score = this.locationScore(u);
+		//System.out.println ("Loc : " + location_score); 
 		double zodiac_score = this.zodiacScore(u);
+		//System.out.println ("Zodiac : " + zodiac_score); 
 		return (int) (age_score + location_score + zodiac_score);
 	}
 
@@ -68,7 +71,7 @@ public class User {
 		}
 
 		double difficulty = FloydWarshall.getTravelTime(this, u) * speed;
-		return (k * difficulty + 30);
+		return (k*difficulty + 30);
 
 	}
 
