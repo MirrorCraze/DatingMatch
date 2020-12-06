@@ -33,6 +33,7 @@ public class IntegrationTesting {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		FloydWarshall.mapInitialize();
 	}
 
 	@AfterEach
@@ -40,10 +41,7 @@ public class IntegrationTesting {
 	}
 
 	@Test
-	void testCase_01() throws FileNotFoundException { // Ivan & Andela
-		// Cyrus & Dusica
-		FloydWarshall fw_obj = new FloydWarshall();
-		fw_obj.mapInitialize();
+	void testCase_01() throws FileNotFoundException { // Ivan & Andela/Cyrus & Dusica
 		String filename = "test";
 		InputRead.readFile(filename);
 		FloydWarshall.calShortestDist();
@@ -58,14 +56,10 @@ public class IntegrationTesting {
 	}
 
 	@Test
-	void testCase_02() throws FileNotFoundException { // Ivan & Andela
-		// Cyrus & Dusica
-		FloydWarshall fw_obj = new FloydWarshall();
-		fw_obj.mapInitialize();
+	void testCase_02() throws FileNotFoundException { 
 		String filename = "test_testingStableMatch";
 		InputRead.readFile(filename);
 		double dist[][] = FloydWarshall.calShortestDist();
-		fw_obj.printDist(dist);
 		Stable_Matching.setScore();
 		Stable_Matching.stable_match();
 		String result = "";
