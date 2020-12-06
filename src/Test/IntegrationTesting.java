@@ -64,9 +64,11 @@ public class IntegrationTesting {
 		Stable_Matching.stable_match();
 		String result = "";
 		for (Female f : Stable_Matching.females) {
+			
 			result += f.getPartner().fullName;
+			
 		}
-		String expectedResult = "IbanIvanTimur";
+		String expectedResult = "IbanTimurIvan";
 		assertEquals(expectedResult, result);
 	}
 }

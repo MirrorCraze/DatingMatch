@@ -17,7 +17,10 @@ public class Male extends User {
 	{
 		return maleIndex;
 	}
-	
+	public static void initialize()
+	{
+		maleIndexNext = 0;
+	}
 	public Female getNextCandidate()
 	{
 		Female f = (Female) super.ranking.get(pointer++).u;

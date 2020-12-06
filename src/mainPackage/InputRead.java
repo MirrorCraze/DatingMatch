@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class InputRead {
-	public static double[][] readFile(String filename) throws FileNotFoundException {
+	public static void readFile(String filename) throws FileNotFoundException {
 
 		String name = "";
 		double latCoor = 0;
@@ -37,6 +37,6 @@ public class InputRead {
 			 * Male(name,gender,age,maxAge,minAge,year,latCoor,longCoor);
 			 */
 		}
-		return FloydWarshall.calShortestDist();
+		return;
 	}
 }

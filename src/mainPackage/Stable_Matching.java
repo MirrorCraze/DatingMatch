@@ -8,12 +8,20 @@ public class Stable_Matching {
 	public static LinkedList<Male> freeMales = new LinkedList<>();
 	public static LinkedList<Female> females = new LinkedList<>();
 	public static LinkedList<Male> males = new LinkedList<>();
+	public static void initialize()
+	{
+		freeMales = new LinkedList<>();
+		females = new LinkedList<>();
+		males = new LinkedList<>();
+	}
 	public static void setScore()
 	{
 		for(Male m: freeMales)
 			{
 			for(Female f: females)
 				{
+					
+					
 					int score = m.calculateScore(f);
 					//System.out.println("From " + m.fullName + " to " + f.fullName + ": " + score);
 					m.ranking.add(new Element(f, score));
@@ -27,7 +35,6 @@ public class Stable_Matching {
 			for(Male m: freeMales)
 			{
 				int score = f.calculateScore(m);
-				//System.out.println("From " + f.fullName + " to " + m.fullName + ": " + score);
 				f.ranking.set(m.getMaleIndex(), new Element(m, score));
 			}
 				//f.printRanking();

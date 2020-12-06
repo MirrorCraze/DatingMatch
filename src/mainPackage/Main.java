@@ -17,7 +17,8 @@ public class Main {
 		boolean done=false;
 		System.out.println("Please input the data file name:");
 		filename = sc.next();
-		double[][] distance = InputRead.readFile(filename);
+		InputRead.readFile(filename);
+		double[][] distance = FloydWarshall.calShortestDist();
 		System.out.println("Data collected, thank you, dear!\n");
 		Stable_Matching.setScore();
 		while(!done)

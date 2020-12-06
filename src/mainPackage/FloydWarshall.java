@@ -17,10 +17,13 @@ public class FloydWarshall {
 	public static double[][] dist;
 
 	public static void mapInitialize() {
-		// add station
+		// initialize everything
 	    clearMaleArrList();
 		clearFemaleArrList();
 		clearStationArrList();
+		Male.initialize();
+		Stable_Matching.initialize();
+		// Add station
 		station.add(new Place("Mongkok", 22.320960, 114.170550));
 		station.add(new Place("Central", 22.281899, 114.157458));
 		station.add(new Place("Diamond Hill", 22.340871, 114.202095));
@@ -119,7 +122,6 @@ public class FloydWarshall {
 		}
 		return dist;
 	}
-
 	public static void printDist(double[][] dist) {
 		System.out.printf("%15s ", " ");
 		for (int i = 0; i < female.size(); i++) {
@@ -154,23 +156,42 @@ public class FloydWarshall {
 																													// (diffY)^2)
 		return dist / divider; // return the minute of walking.
 	}
-
+	public static int findMale(User u1)
+	{
+		for(int i=0;i<male.size();i++)
+		{
+			if(male.get(i).fullName.equals(u1.fullName))
+				return i;
+		}
+		return -1;
+	}
+	public static int findFemale(User u1)
+	{
+		for(int i=0;i<female.size();i++)
+		{
+			if(female.get(i).fullName.equals(u1.fullName))
+				return i;
+		}
+		return -1;
+	}
 	public static double getTravelTime(User u1, User u2) {
-
+		
 		int i = 0, j = 0;
 		if (u1 instanceof Male && u2 instanceof Female) {
 			u1 = (Male) u1;
 			u2 = (Female) u2;
-			i = male.indexOf(u1);
-			j = female.indexOf(u2);
+			i = findMale(u1);
+			j = findFemale(u2);
+			
 		} else if (u1 instanceof Female && u2 instanceof Male) {
 
 			u1 = (Female) u1;
 			u2 = (Male) u2;
-			i = male.indexOf(u2);
-			j = female.indexOf(u1);
+			i = findMale(u2);
+			j = findFemale(u1);
+			
 		}
-
+		
 		return dist[i][j];
 	}
 	
