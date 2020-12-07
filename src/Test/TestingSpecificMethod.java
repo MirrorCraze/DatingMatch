@@ -38,7 +38,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_02() throws FileNotFoundException { // Testing when Coor for all people are same
+	void test_AllCoorAreSame() throws FileNotFoundException { // Testing when Coor for all people are same
 		String filename = "test_AllCoorAreSame";
 		InputRead.readFile(filename);
 		double[][] matrixOne = FloydWarshall.calShortestDist();
@@ -66,9 +66,8 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_03() throws FileNotFoundException { // Testing when Guys are close to station and girls are far from
+	void test_GuysCloseToStationGirlsFar() throws FileNotFoundException { // Testing when Guys are close to station and girls are far from
 														// station
-
 		String filename = "test_GuysCloseToStationGirlsFar";
 		InputRead.readFile(filename);
 		double[][] matrixOne = FloydWarshall.calShortestDist();
@@ -94,7 +93,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_04() throws FileNotFoundException { // Testing when two Girls are Close to station and Guys are far
+	void test_GirlsCloseToStationGuysFar() throws FileNotFoundException { // Testing when two Girls are Close to station and Guys are far
 
 		String filename = "test_GirlsCloseToStationGuysFar";
 		InputRead.readFile(filename);
@@ -122,7 +121,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_05() throws FileNotFoundException { // Testing when one par (boy+girl) are close one far
+	void test_OnePairCloseToSameStationOneFar() throws FileNotFoundException { // Testing when one par (boy+girl) are close one far
 
 		String filename = "test_OnePairCloseToSameStationOneFar";
 		InputRead.readFile(filename);
@@ -150,7 +149,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_06() throws FileNotFoundException { // Testing when both pairs are far from stations
+	void test_AllPairsFarFromStation() throws FileNotFoundException { // Testing when both pairs are far from stations
 
 		String filename = "test_AllPairsFarFromStation";
 		InputRead.readFile(filename);
@@ -181,7 +180,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_07() throws FileNotFoundException { // Testin when two people are closer by walk than home->station
+	void test_PairCloseByWalk() throws FileNotFoundException { // Testin when two people are closer by walk than home->station
 
 		String filename = "test_PairCloseByWalk";
 
@@ -212,7 +211,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_08() throws FileNotFoundException { // Pair Close to Mong Kok Station, Pair Close to Central
+	void test_PairCloseToMongKok_PairCloseToCentral() throws FileNotFoundException { // Pair Close to Mong Kok Station, Pair Close to Central
 
 		String filename = "test_PairCloseToMongKok_PairCloseToCentral";
 		InputRead.readFile(filename);
@@ -241,7 +240,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_09() throws FileNotFoundException { // Pair Close to Diamond Hill Station, Pair Close to Kowloon Tong
+	void test_PairCloseToDHill_PairCloseToKT() throws FileNotFoundException { // Pair Close to Diamond Hill Station, Pair Close to Kowloon Tong
 
 		String filename = "test_PairCloseToDHill_PairCloseToKT";
 		InputRead.readFile(filename);
@@ -272,7 +271,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_10() throws FileNotFoundException { // Pair Close to North Point Station, Pair Close to Lai King
+	void test_PairCloseToNP_PairCloseToLK() throws FileNotFoundException { // Pair Close to North Point Station, Pair Close to Lai King
 
 		String filename = "test_PairCloseToNP_PairCloseToLK";
 		InputRead.readFile(filename);
@@ -301,7 +300,7 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_11() throws FileNotFoundException { // Pair Close to Tiu Keng Leng Station, Pair Close to Hung Hom
+	void test_PairCloseToTKL_PairCloseToHH() throws FileNotFoundException { // Pair Close to Tiu Keng Leng Station, Pair Close to Hung Hom
 
 		String filename = "test_PairCloseToTKL_PairCloseToHH";
 		InputRead.readFile(filename);
@@ -333,7 +332,7 @@ public class TestingSpecificMethod {
 	@Test
 	// Every Person on Different Station (Girl:Mong Kok,Guy:Central,Girl:Diamond
 	// Hill,Guy:Hung Hom)
-	void testCase_12() throws FileNotFoundException {
+	void test_EveryoneCloseToDifferentStation() throws FileNotFoundException {
 
 		String filename = "test_EveryoneCloseToDifferentStation";
 		InputRead.readFile(filename);
@@ -366,7 +365,7 @@ public class TestingSpecificMethod {
 	@Test
 	// Every Person on Different Station (Girl:Kowloon Tong,Guy:Tiu Keng
 	// Leng,Girl:North Point,Guy:Lai King)
-	void testCase_13() throws FileNotFoundException {
+	void test_EveryoneCloseToDifferentStation1() throws FileNotFoundException {
 
 		String filename = "test_EveryoneCloseToDifferentStation1";
 		InputRead.readFile(filename);
@@ -395,13 +394,43 @@ public class TestingSpecificMethod {
 	}
 
 	@Test
-	void testCase_14() throws FileNotFoundException {
-		String filename = "test";
+	void testCase_GirlsAndBoysHaveSameCoordinates() throws FileNotFoundException { //Girls have same and boys have same coordinates
+		String filename = "test_GirlsAndBoysHaveSameCoordinates";
 		InputRead.readFile(filename);
 		double[][] matrixOne = FloydWarshall.calShortestDist();
 		boolean actualResult = false;
-		double[][] matrixTwo = { { 15.76849435297941, 18.928295020573557, 9.739940100276142 },
-				{ 53.11630995496587, 34.27611062256001, 47.087755702262605 }, };
+		double[][] matrixTwo = { { 16.350560406391114, 16.350560406391114 },
+				{ 16.350560406391114, 16.350560406391114 }, };
+		int row1 = matrixOne.length;
+		int col1 = matrixOne[0].length;
+
+		// Calculates the number of rows and columns present in the second matrix
+
+		int row2 = matrixTwo.length;
+		int col2 = matrixTwo[0].length;
+
+		for (int i = 0; i < row1; i++) {
+			for (int j = 0; j < col1; j++) {
+				if (matrixOne[i][j] != matrixTwo[i][j]) {
+					actualResult = false;
+					break;
+				} else {
+					actualResult = true;
+				}
+			}
+		}
+		boolean expectedResult = true;
+		assertEquals(expectedResult, actualResult);
+	}
+	
+	@Test
+	void test_OneBoyAndOneGirlSameCoordinates() throws FileNotFoundException { //Girls have same and boys have same coordinates
+		String filename = "test_OneBoyAndOneGirlSameCoordinates";
+		InputRead.readFile(filename);
+		double[][] matrixOne = FloydWarshall.calShortestDist();
+		boolean actualResult = false;
+		double[][] matrixTwo = { { 12.89659478635219, 16.350560406391114 },
+				{ 16.350560406391114, 9.804526026430038 }, };
 		int row1 = matrixOne.length;
 		int col1 = matrixOne[0].length;
 

@@ -18,7 +18,7 @@ public class FloydWarshall {
 
 	public static void mapInitialize() {
 		// initialize everything
-	    clearMaleArrList();
+		clearMaleArrList();
 		clearFemaleArrList();
 		clearStationArrList();
 		Male.initialize();
@@ -77,8 +77,6 @@ public class FloydWarshall {
 		distStation[hashMTRName.get(station2)][hashMTRName.get(station1)] = dist;
 	}
 
-
-
 	public static void addPerson(String name, char gender, int age, int maxAge, int minAge, int year, double latCoor,
 			double longCoor) {
 
@@ -122,6 +120,7 @@ public class FloydWarshall {
 		}
 		return dist;
 	}
+/*
 	public static void printDist(double[][] dist) {
 		System.out.printf("%15s ", " ");
 		for (int i = 0; i < female.size(); i++) {
@@ -136,7 +135,7 @@ public class FloydWarshall {
 			System.out.printf("\n");
 		}
 	}
-
+*/
 	public static char typePos(int pos) {
 		if (0 <= pos && pos < male.size()) {
 			return 'm'; // male
@@ -156,51 +155,52 @@ public class FloydWarshall {
 																													// (diffY)^2)
 		return dist / divider; // return the minute of walking.
 	}
-	public static int findMale(User u1)
-	{
-		for(int i=0;i<male.size();i++)
-		{
-			if(male.get(i).fullName.equals(u1.fullName))
+
+	public static int findMale(User u1) {
+		for (int i = 0; i < male.size(); i++) {
+			if (male.get(i).fullName.equals(u1.fullName))
 				return i;
 		}
 		return -1;
 	}
-	public static int findFemale(User u1)
-	{
-		for(int i=0;i<female.size();i++)
-		{
-			if(female.get(i).fullName.equals(u1.fullName))
+
+	public static int findFemale(User u1) {
+		for (int i = 0; i < female.size(); i++) {
+			if (female.get(i).fullName.equals(u1.fullName))
 				return i;
 		}
 		return -1;
 	}
+
 	public static double getTravelTime(User u1, User u2) {
-		
+
 		int i = 0, j = 0;
 		if (u1 instanceof Male && u2 instanceof Female) {
 			u1 = (Male) u1;
 			u2 = (Female) u2;
 			i = findMale(u1);
 			j = findFemale(u2);
-			
+
 		} else if (u1 instanceof Female && u2 instanceof Male) {
 
 			u1 = (Female) u1;
 			u2 = (Male) u2;
 			i = findMale(u2);
 			j = findFemale(u1);
-			
+
 		}
-		
+
 		return dist[i][j];
 	}
-	
+
 	public static void clearMaleArrList() {
 		male.clear();
 	}
+
 	public static void clearFemaleArrList() {
-	  female.clear();
+		female.clear();
 	}
+
 	public static void clearStationArrList() {
 		station.clear();
 	}
