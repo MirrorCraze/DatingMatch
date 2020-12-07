@@ -2,18 +2,13 @@ package Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
 
-import org.junit.Rule;
+import java.io.FileNotFoundException;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.rules.TemporaryFolder;
 import mainPackage.FloydWarshall;
 import mainPackage.InputRead;
 //Test calShortestDist() in the FloydWarshal class
@@ -61,6 +56,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -88,6 +85,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -116,6 +115,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -144,6 +145,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -175,6 +178,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -206,6 +211,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -235,6 +242,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -266,6 +275,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -295,6 +306,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -325,6 +338,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -358,6 +373,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -389,6 +406,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -419,6 +438,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
@@ -438,7 +459,7 @@ public class TestingSpecificMethod {
 
 		int row2 = matrixTwo.length;
 		int col2 = matrixTwo[0].length;
-
+		
 		for (int i = 0; i < row1; i++) {
 			for (int j = 0; j < col1; j++) {
 				if (matrixOne[i][j] != matrixTwo[i][j]) {
@@ -449,6 +470,8 @@ public class TestingSpecificMethod {
 				}
 			}
 		}
+		if(row2 != row1 || col2 != col1)
+			actualResult = false;
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}

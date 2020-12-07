@@ -2,17 +2,13 @@ package Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 
-import org.junit.Rule;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.rules.TemporaryFolder;
 import mainPackage.FloydWarshall;
 import mainPackage.InputRead;
 import mainPackage.User;;
@@ -45,7 +41,7 @@ public class TestingMethodInUser {
 		User u1 = FloydWarshall.male.get(0);
 		User u2 = FloydWarshall.female.get(0);
 		double actualResult = u1.calculateScore(u2);
-		int expectedResult = 0;
+		int expectedResult = 43;
 		assertEquals(expectedResult, actualResult);
 	}
 
@@ -57,7 +53,7 @@ public class TestingMethodInUser {
 		User u1 = FloydWarshall.male.get(0);
 		User u2 = FloydWarshall.female.get(0);
 		double actualResult = u1.calculateScore(u2);
-		int expectedResult = 0;
+		int expectedResult = 48;
 		assertEquals(expectedResult, actualResult);
 	}
 
@@ -69,7 +65,7 @@ public class TestingMethodInUser {
 		User u1 = FloydWarshall.male.get(0);
 		User u2 = FloydWarshall.female.get(0);
 		double actualResult = u2.calculateScore(u1);
-		int expectedResult = 0;
+		int expectedResult = 42;
 		assertEquals(expectedResult, actualResult);
 	}
 
@@ -81,7 +77,7 @@ public class TestingMethodInUser {
 		User u1 = FloydWarshall.male.get(0);
 		User u2 = FloydWarshall.female.get(0);
 		double actualResult = u2.calculateScore(u1);
-		int expectedResult = 0;
+		int expectedResult = 48;
 		assertEquals(expectedResult, actualResult);
 	}
 

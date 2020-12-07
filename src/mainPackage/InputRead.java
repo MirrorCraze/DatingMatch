@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class InputRead {
-	public static void readFile(String filename) throws FileNotFoundException {
+	public static void readFile(String filename) throws FileNotFoundException, InvalidAmountOfInput {
 
 		String name = "";
 		double latCoor = 0;
@@ -21,6 +21,10 @@ public class InputRead {
 
 			inputAll = in.nextLine();
 			inputDiv = inputAll.split(",");
+			if(inputDiv.length !=7)
+			{
+				throw new InvalidAmountOfInput();
+			}
 			name = inputDiv[0];
 			gender = inputDiv[1].charAt(0);
 			age = Integer.parseInt(inputDiv[2]);
