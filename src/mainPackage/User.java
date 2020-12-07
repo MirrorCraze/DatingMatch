@@ -29,8 +29,7 @@ public class User {
 	}
 
 	public int calculateScore(User u) {
-		if (u.age <= this.lowerAgeBound || u.age >= this.upperAgeBound)
-			return 0;
+		
 		double age_score = this.ageScore(u);
 		// System.out.println ("Age : " + age_score);
 		double location_score = this.locationScore(u);
@@ -41,6 +40,8 @@ public class User {
 	}
 
 	private double ageScore(User u) {
+		if (u.age <= this.lowerAgeBound || u.age >= this.upperAgeBound)
+			return 0.0;
 		double d = Math.abs(this.age - u.age);
 		return (-25.00 / 26.00) * d + 50;
 	}
@@ -82,12 +83,11 @@ public class User {
 	public int getLowerBoundary() {
 		return lowerAgeBound;
 	}
-/*
 	public void printRanking() {
 		System.out.println(fullName + " ranking:");
 		for (Element e : ranking)
 			System.out.println(e.u.fullName + " score: " + e.score);
 		System.out.println();
 	}
-*/
+
 }

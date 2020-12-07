@@ -120,7 +120,6 @@ public class FloydWarshall {
 		}
 		return dist;
 	}
-/*
 	public static void printDist(double[][] dist) {
 		System.out.printf("%15s ", " ");
 		for (int i = 0; i < female.size(); i++) {
@@ -135,7 +134,6 @@ public class FloydWarshall {
 			System.out.printf("\n");
 		}
 	}
-*/
 	public static char typePos(int pos) {
 		if (0 <= pos && pos < male.size()) {
 			return 'm'; // male

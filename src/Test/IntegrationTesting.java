@@ -143,7 +143,7 @@ public class IntegrationTesting {
 			result += f.getPartner().fullName;
 
 		}
-		String expectedResult = "LukaIvanLukaMarkoLuka";
+		String expectedResult = "JohnIvanTimurMarkoLuka";
 		assertEquals(expectedResult, result);
 	}
 
@@ -161,7 +161,7 @@ public class IntegrationTesting {
 			result += f.getPartner().fullName;
 
 		}
-		String expectedResult = "TimurTimurMarkoMarkoJohn";
+		String expectedResult = "BlakeJohnMarkoTimurIvan";
 		assertEquals(expectedResult, result);
 	}
 
@@ -271,7 +271,7 @@ public class IntegrationTesting {
 			result += f.getPartner().fullName;
 
 		}
-		String expectedResult = "JohnDaniel";
+		String expectedResult = "DanielJohn";
 		assertEquals(expectedResult, result);
 	}
 	

@@ -40,6 +40,7 @@ public class Main {
 			break;
 			case 3:
 				Stable_Matching.stable_match();
+				Stable_Matching.printCouples();
 				System.out.println();
 			break;
 			case 0:

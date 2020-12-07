@@ -37,7 +37,7 @@ public class Stable_Matching {
 			// f.printRanking();
 		}
 	}
-/*
+
 	public static void printScore() {
 		for (Male m : freeMales) {
 			m.printRanking();
@@ -49,35 +49,39 @@ public class Stable_Matching {
 			f.printRanking();
 		}
 	}
-*/
+
 	public static void stable_match() {
 		while (!freeMales.isEmpty()) {
 			Male m = freeMales.getFirst();
 			if (m.pointer == females.size()) {
+				
 				freeMales.removeFirst();
 				males.add(m);
 			} else {
 				Female f = m.getNextCandidate();
+				
 				if (f.getScore(m) != -1)
 					if (f.getPartner() == null) {
+						
 						f.setPartner(m);
 						freeMales.removeFirst();
 						males.add(m);
 					} else if (f.getScore(f.getPartner()) < f.getScore(m)) {
+						freeMales.addLast(f.getPartner());
 						f.setPartner(m);
 						freeMales.removeFirst();
 						males.add(m);
-						freeMales.addLast(m);
+						
 					}
 			}
 		}
 		// printCouples();
 	}
-/*
+
 	public static void printCouples() {
 		for (Female f : females) {
 			if (f.partner != null)
 				System.out.println(f.partner.fullName + " & " + f.fullName);
 		}
-	}*/
+	}
 }
