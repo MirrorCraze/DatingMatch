@@ -1,0 +1,12 @@
+Ox,Rabbit,Horse,Rooster,Rat,Dragon,Monkey,Dog,Snake,Sheep,Tiger,Pig
+Ox,Snake,Sheep,Monkey,Pig,Tiger,Dragon,Rat,Rabbit,Horse,Rooster,Dog
+Rabbit,Ox,Snake,Horse,Dog,Monkey,Rat,Tiger,Pig,Dragon,Sheep,Rooster
+Tiger,Rabbit,Sheep,Rooster,Dragon,Pig,Rat,Ox,Dog,Horse,Snake,Monkey
+Ox,Dragon,Monkey,Rat,Tiger,Dog,Pig,Sheep,Rabbit,Snake,Horse,Rooster
+Rat,Snake,Rooster,Ox,Monkey,Rabbit,Pig,Dog,Tiger,Dragon,Horse,Sheep
+Dragon,Horse,Pig,Rat,Rabbit,Dog,Rooster,Sheep,Ox,Tiger,Snake,Monkey
+Sheep,Monkey,Dog,Pig,Tiger,Rabbit,Dragon,Horse,Ox,Rat,Snake,Rooster
+Rooster,Rat,Monkey,Rabbit,Horse,Dragon,Tiger,Pig,Snake,Ox,Sheep,Dog
+Dragon,Rooster,Dog,Horse,Ox,Monkey,Rat,Tiger,Rabbit,Snake,Sheep,Pig
+Tiger,Sheep,Rabbit,Dragon,Monkey,Dog,Snake,Pig,Rat,Ox,Rooster,Horse
+Horse,Rabbit,Pig,Rooster,Rat,Snake,Dragon,Monkey,Sheep,Ox,Tiger,Dog
